@@ -106,6 +106,40 @@
 
 ![image](https://github.com/user-attachments/assets/ca816ed7-fbd7-4d46-8672-c781e590fbd6)
 
-и нажимаем import
+нажимаем import и видим результат
+
+![image](https://github.com/user-attachments/assets/f2e66d22-0f14-4f5c-a586-a56f81f17d76)
+
+далее переходим к работе с викторией метрикс
+переходим на сайт `localhost:8428`
+
+![image](https://github.com/user-attachments/assets/042ce353-b113-4a7e-ba89-edd82f829cc3)
+
+и также переходим на сайт `localhost:9090`
+
+![image](https://github.com/user-attachments/assets/8311d33f-bea9-4522-b8dd-5a6aaf0d5baa)
+
+в графане создаем викторию метрик по тому же алгоритму что и Prometheus но меняем url и указываем no autentification
+
+![image](https://github.com/user-attachments/assets/7457433a-03c6-4c7d-ba7e-849cb0c1013e)
+
+возвращаемся назад и открываем созданное
+
+![image](https://github.com/user-attachments/assets/2827fed5-3046-4058-8edf-a245e1b73d60)
+![image](https://github.com/user-attachments/assets/2103f6ac-dc74-44c3-ae96-279329428e1c)
+
+переходим вы терминал и вводим команду `echo -e "# TYPE light_metric1 gauge\nlight_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
+
+возвращаемся к виктории меткрикс и открываем данную ссылку 
+![image](https://github.com/user-attachments/assets/5ec68bad-e054-4189-847c-ebd1e59b26a5)
+
+в строку вводим `light_metric1` и смотрим результат
+
+![image](https://github.com/user-attachments/assets/b65ab591-9acb-4f6f-becb-33ea068629da)
+
+переходим обратно в графану и вводим `light_metric1` в строку
+
+![image](https://github.com/user-attachments/assets/300eb435-8da2-4c52-bbca-ea287de18af2)
+
 
 
